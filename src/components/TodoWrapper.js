@@ -29,6 +29,13 @@ function TodoWrapper() {
             todo.id !== id
         ))
     }
+
+    const editTodo = id => {
+        setTodos(todos.map(todo => 
+            (todo.id === id) ?
+            {...todo, isEditing: !todo.isEditing} : todo
+        ))
+    }
     
   return (
     <div className='TodoWrapper'>
@@ -40,6 +47,7 @@ function TodoWrapper() {
             key={index} 
             toggleComplete={toggleComplete}
             deleteTodo={deleteTodo}
+            editTodo={editTodo}
             />
         ))}
     </div>
