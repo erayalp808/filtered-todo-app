@@ -66,9 +66,12 @@ function TodoWrapper() {
     <div className='TodoWrapper'>
         <h1>Let's Plan All Out!</h1>
         <TodoForm addTodo={addTodo}/>
+        
         <FilterBar 
         setFilteredTodos={setFilteredTodos} 
         todos={todos}/>
+
+        <div id='listOfTodos'>
         {filteredTodos.map((todo, index) => (
             todo.isEditing ? (
                 <EditTodoForm 
@@ -84,6 +87,8 @@ function TodoWrapper() {
                 />
             )
         ))}
+        </div>
+
     </div>
   )
 }
