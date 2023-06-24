@@ -80,6 +80,10 @@ h1 {
   cursor: pointer;
 }
 
+.Todo > p {
+  flex-grow: 1;
+}
+
 .fa-trash {
   margin-left: 0.75rem;
 }
