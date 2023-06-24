@@ -46,6 +46,15 @@ h1 {
   color: #fff;
 }
 
+.todo-input.addingForm {
+  margin-bottom: 16px;
+}
+
+.todo-input.filter {
+  margin-top: 0;
+  width: 350px;
+}
+
 .todo-input::placeholder {
   color: #ffffff4d;
 }
