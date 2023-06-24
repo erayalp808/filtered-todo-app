@@ -4,14 +4,17 @@ function TodoForm({addTodo}) {
     const [value, setValue] = useState("");
 
     const handleSubmit = e => {
-        // prevent default action
+
         e.preventDefault();
-        if (value) {
-          // add todo
-          addTodo(value);
-          // clear form after submission
+
+        if (!value || /^\s*$/.test(value)) {
           setValue('');
+          return;
         }
+
+        addTodo(value);
+        
+        setValue('');
     }
   return (
     <form className='TodoForm' onSubmit={handleSubmit}>
