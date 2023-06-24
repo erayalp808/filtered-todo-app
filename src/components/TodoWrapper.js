@@ -19,6 +19,7 @@ function TodoWrapper() {
     
   return (
     <div className='TodoWrapper'>
+        <h1>Let's Plan All Out!</h1>
         <TodoForm addTodo={addTodo}/>
         {todos.map((todo, index) => (
             <Todo task={todo} key={index} />
