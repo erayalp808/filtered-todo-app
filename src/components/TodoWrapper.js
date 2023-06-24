@@ -8,7 +8,21 @@ import FilterBar from './FilterBar';
 uuidv4();
 
 function TodoWrapper() {
-    const [todos, setTodos] = useState([]);
+    const [todos, setTodos] = useState([
+        {
+            id: uuidv4(), 
+            task: "Take out the trash", 
+            completed: false, 
+            isEditing: false
+        },
+        {
+            id: uuidv4(), 
+            task: "Wash the dishes", 
+            completed: false, 
+            isEditing: false
+        } 
+    ]);
+
     const [filteredTodos, setFilteredTodos] = useState([]);
 
     const addTodo = todo => {
