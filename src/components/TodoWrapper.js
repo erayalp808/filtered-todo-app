@@ -3,10 +3,13 @@ import TodoForm from './TodoForm'
 import {v4 as uuidv4} from 'uuid'
 import Todo from './Todo';
 import EditTodoForm from './EditTodoForm';
+import FilterBar from './FilterBar';
+
 uuidv4();
 
 function TodoWrapper() {
     const [todos, setTodos] = useState([]);
+    const [filteredTodos, setFilteredTodos] = useState([]);
 
     const addTodo = todo => {
         setTodos([...todos, 
@@ -49,9 +52,14 @@ function TodoWrapper() {
     <div className='TodoWrapper'>
         <h1>Let's Plan All Out!</h1>
         <TodoForm addTodo={addTodo}/>
-        {todos.map((todo, index) => (
+        <FilterBar 
+        setFilteredTodos={setFilteredTodos} 
+        todos={todos}/>
+        {filteredTodos.map((todo, index) => (
             todo.isEditing ? (
-                <EditTodoForm editTask={editTask} todo={todo}/>
+                <EditTodoForm 
+                editTask={editTask} 
+                todo={todo}/>
             ) : (
                 <Todo 
                 todo={todo} 
