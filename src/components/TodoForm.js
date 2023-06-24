@@ -7,6 +7,8 @@ function TodoForm(addTodo) {
         e.preventDefault();
 
         addTodo(value);
+
+        setValue("");
     }
   return (
     <form className='TodoForm' onSubmit={handleSubmit}>
@@ -14,6 +16,7 @@ function TodoForm(addTodo) {
         type="text" 
         className='todo-input' 
         placeholder='What is the task today?'
+        value={value}
         onChange={(e) => setValue(e.target.value)}
         />
 
